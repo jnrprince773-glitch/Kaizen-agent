@@ -33,6 +33,7 @@ You are Nery. Answer the engineering task directly. `;
 
 function normalizeMessages(input) {
   if (!Array.isArray(input)) return [];
+
   return input
     .filter(message =>
       message &&
@@ -72,7 +73,7 @@ export default async function handler(req, res) {
   }
 
   const baseUrl = (process.env.AI_GATEWAY_BASE_URL || "https://ai-gateway.vercel.sh/v1").replace(/\/$/, "");
-  const model = process.env.NERY_MODEL || "openai/gpt-5.6";
+  const model = process.env.NERY_MODEL || "openai/gpt-5.6-sol";
 
   try {
     const response = await fetch(baseUrl + "/chat/completions", {
@@ -97,7 +98,10 @@ export default async function handler(req, res) {
       const message = typeof data?.error?.message === "string"
         ? data.error.message
         : "AI Gateway request failed.";
-      return res.status(response.status >= 500 ? 502 : response.status).json({ error: message });
+
+      return res.status(response.status >= 500 ? 502 : response.status).json({
+        error: message
+      });
     }
 
     const answer = data?.choices?.[0]?.message?.content;
