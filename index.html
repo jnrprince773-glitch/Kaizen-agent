@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d1a">
+  <meta name="description" content="Nery — a calm engineering cockpit for building real software.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Nery — Engineering Agent</title>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img class="logo" src="/icon.svg" alt="" aria-hidden="true">
+        <div>
+          <strong>Nery</strong>
+          <span>Engineering agent</span>
+        </div>
+      </div>
+      <div class="status" id="status">
+        <span class="dot"></span>
+        <span>checking</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel sidebar">
+        <div class="hero">
+          <h1>Build. Verify. Ship.</h1>
+          <p>Nery helps you reason about real code without pretending uncertainty is certainty.</p>
+        </div>
+
+        <div class="section">
+          <h2>Operating contract</h2>
+          <div class="chips">
+            <span class="chip">Read first</span>
+            <span class="chip">Smallest change</span>
+            <span class="chip">No fake results</span>
+            <span class="chip">Protect secrets</span>
+            <span class="chip">Verify</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Audit</h2>
+          <div class="audit" id="audit"></div>
+        </div>
+
+        <div class="section">
+          <button class="secondary" id="clearAudit" type="button">Clear local audit</button>
+        </div>
+      </aside>
+
+      <section class="panel chat" aria-label="Nery chat">
+        <header class="chat-head">
+          <div>
+            <strong>Engineering room</strong>
+            <span>Server-side AI gateway · no client-side key</span>
+          </div>
+          <button class="secondary" id="health" type="button">Health</button>
+        </header>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+
+        <form class="composer" id="composer">
+          <textarea id="input" maxlength="12000" placeholder="Describe the codebase, bug, feature, or decision..." required></textarea>
+          <div class="composer-row">
+            <span class="hint">Enter sends · Shift+Enter adds a line</span>
+            <button class="primary" id="send" type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
