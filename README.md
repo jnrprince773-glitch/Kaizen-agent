@@ -20,7 +20,7 @@ Set:
 
 ```bash
 AI_GATEWAY_API_KEY=...
-NERY_MODEL=openai/gpt-5.6
+NERY_MODEL=openai/gpt-5.6-sol
 ```
 
 The gateway base URL defaults to:
@@ -54,4 +54,4 @@ The first version is the Nery cockpit and AI interface. Direct GitHub/database m
 
 ## Vercel
 
-The chat route uses the OpenAI-compatible AI Gateway endpoint documented by Vercel. citeturn577183search0turn577183search1
+The chat route uses Vercel's documented OpenAI-compatible AI Gateway endpoint: `https://ai-gateway.vercel.sh/v1`.
