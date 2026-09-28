@@ -1,0 +1,9 @@
+{
+  "name": "nery",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nery engineering cockpit",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
