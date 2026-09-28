@@ -1,0 +1,17 @@
+{
+  "name": "Nery — Engineering Agent",
+  "short_name": "Nery",
+  "description": "A calm engineering cockpit for building and verifying real software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060713",
+  "theme_color": "#0b0d1a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
